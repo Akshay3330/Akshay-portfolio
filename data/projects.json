@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ecommerce-dashboard",
+    "title": "E-commerce Analytics Dashboard",
+    "description": "A comprehensive dashboard for tracking sales, inventory, and customer analytics with real-time data visualization.",
+    "image": "/placeholder.svg?height=300&width=400",
+    "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "Chart.js", "PostgreSQL"],
+    "businessOutcome": "Increased sales team efficiency by 40%",
+    "githubUrl": "https://github.com/mandaviya-akshay/ecommerce-dashboard",
+    "liveUrl": "https://ecommerce-dashboard-demo.vercel.app"
+  },
+  {
+    "id": "task-management-app",
+    "title": "Collaborative Task Manager",
+    "description": "A modern task management application with real-time collaboration, drag-and-drop functionality, and team workspaces.",
+    "image": "/placeholder.svg?height=300&width=400",
+    "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Socket.io", "MongoDB"],
+    "businessOutcome": "Improved team productivity by 35%",
+    "githubUrl": "https://github.com/mandaviya-akshay/task-manager",
+    "liveUrl": "https://task-manager-demo.vercel.app"
+  },
+  {
+    "id": "fintech-mobile-app",
+    "title": "FinTech Mobile Banking",
+    "description": "A secure mobile banking application with biometric authentication, transaction tracking, and investment portfolio management.",
+    "image": "/placeholder.svg?height=300&width=400",
+    "technologies": ["React Native", "TypeScript", "Redux", "Node.js", "Express", "PostgreSQL"],
+    "businessOutcome": "Reduced customer support tickets by 50%",
+    "githubUrl": "https://github.com/mandaviya-akshay/fintech-app",
+    "liveUrl": "https://fintech-demo.vercel.app"
+  },
+  {
+    "id": "healthcare-platform",
+    "title": "Healthcare Management Platform",
+    "description": "A comprehensive healthcare platform for patient management, appointment scheduling, and medical record tracking.",
+    "image": "/placeholder.svg?height=300&width=400",
+    "technologies": ["React", "TypeScript", "Material-UI", "Node.js", "GraphQL", "MongoDB"],
+    "businessOutcome": "Streamlined patient flow by 60%",
+    "githubUrl": "https://github.com/mandaviya-akshay/healthcare-platform",
+    "liveUrl": "https://healthcare-demo.vercel.app"
+  },
+  {
+    "id": "social-media-analytics",
+    "title": "Social Media Analytics Tool",
+    "description": "An analytics platform for tracking social media performance across multiple platforms with automated reporting.",
+    "image": "/placeholder.svg?height=300&width=400",
+    "technologies": ["React", "Vite", "TypeScript", "D3.js", "Python", "FastAPI"],
+    "businessOutcome": "Increased client retention by 45%",
+    "githubUrl": "https://github.com/mandaviya-akshay/social-analytics",
+    "liveUrl": "https://social-analytics-demo.vercel.app"
+  },
+  {
+    "id": "learning-management-system",
+    "title": "Online Learning Platform",
+    "description": "A modern LMS with video streaming, interactive quizzes, progress tracking, and certificate generation.",
+    "image": "/placeholder.svg?height=300&width=400",
+    "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
+    "businessOutcome": "Improved student engagement by 70%",
+    "githubUrl": "https://github.com/mandaviya-akshay/learning-platform",
+    "liveUrl": "https://learning-demo.vercel.app"
+  }
+]
