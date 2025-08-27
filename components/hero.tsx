@@ -104,14 +104,14 @@ export function Hero() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
           >
-            <Button
+            {/* <Button
               size="lg"
               className="group font-inter font-medium px-8 py-3 text-base"
               onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
             >
               View My Work
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-            </Button>
+            </Button> */}
             <Button
               variant="outline"
               size="lg"
