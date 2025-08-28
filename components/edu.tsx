@@ -16,7 +16,7 @@ export function Edu() {
   const steps: Step[] = [
     {
       icon: School,
-      title: "Higher Secondary (Science) – GSEB",
+      title: "Higher Secondary – GSEB",
       subtitle: "Completed HSC",
       period: "2021",
       description:
