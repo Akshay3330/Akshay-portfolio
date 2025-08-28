@@ -48,12 +48,12 @@ export function Navigation() {
       <motion.div
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
-  style={{ width: "10%" }}
+  style={{ width: "6%" }}
 >
   {theme === "dark" ? (
-    <img src="logo-white.png" alt="Logo" className="h-15 w-auto" />
+    <img src="logo-white.png" alt="Logo" className="" />
   ) : (
-    <img src="logo-black.png" alt="Logo" className="h-15 w-auto" />
+    <img src="logo-black.png" alt="Logo" className="" />
   )}
 </motion.div>
 

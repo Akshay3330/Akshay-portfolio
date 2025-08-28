@@ -83,7 +83,7 @@ export function About() {
 
             <div className="space-y-4 font-inter text-muted-foreground leading-relaxed">
               <p>
-                Hi! I'm Akshay Mandaviya, a passionate full-stack developer with over 3
+                Hi! I'm Akshay Mandaviya, a passionate full-stack developer with over 1.5
                 years of experience building modern web applications. I
                 specialize in React ecosystem and love creating user experiences
                 that are both beautiful and functional.
