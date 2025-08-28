@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -10,7 +10,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { Mail, Send, CheckCircle } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import emailjs from "@emailjs/browser"
-import ReCAPTCHA from "react-google-recaptcha"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -21,18 +20,12 @@ export function Contact() {
     company: "", // honeypot
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
-  const recaptchaRef = useRef<ReCAPTCHA>(null)
   const { toast } = useToast()
 
-  // EmailJS
+  // EmailJS config
   const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_micd9hj"
   const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_4z0wqip"
   const PUBLIC_KEY  = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY  || "JUu9RcEtlojhVAa1F"
-
-  // reCAPTCHA
-  const RECAPTCHA_SITE_KEY =
-    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6Les2LUrAAAAACAEgnqh_x7Ln1gPpPzVRPZF1xeq"
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -47,7 +40,6 @@ export function Contact() {
     if (!formData.message.trim()) return "Please enter a message."
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY)
       return "Email service is not configured. Please set the EmailJS environment variables."
-    if (!recaptchaToken) return "Please complete the CAPTCHA."
     return null
   }
 
@@ -56,24 +48,31 @@ export function Contact() {
 
     const errorMsg = validate()
     if (errorMsg) {
-      toast({ title: "Validation error", description: errorMsg, variant: "destructive" })
+      toast({
+        title: "Validation error ❌",
+        description: errorMsg,
+        variant: "destructive",
+      })
       return
     }
 
-    // Honeypot: if filled, likely a bot — pretend success without sending
+    // Honeypot: if filled, likely a bot
     if (formData.company.trim().length > 0) {
-      toast({ title: "Message received!", description: "Thanks for reaching out. I’ll get back to you shortly." })
+      toast({
+        title: "Message received! 🤖",
+        description: "Thanks for reaching out. I’ll get back to you shortly.",
+      })
       setFormData({ name: "", email: "", phone: "", message: "", company: "" })
-      recaptchaRef.current?.reset()
-      setRecaptchaToken(null)
       return
     }
 
     setIsSubmitting(true)
-    toast({ title: "Sending...", description: "Please wait while we submit your message." })
+    toast({
+      title: "Sending... 📤",
+      description: "Please wait while we submit your message.",
+    })
 
     try {
-      // IMPORTANT: keys match your EmailJS template variables
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
@@ -82,8 +81,6 @@ export function Contact() {
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          // Optional: send the captcha token too (good practice)
-          recaptcha_token: recaptchaToken ?? "",
         },
         { publicKey: PUBLIC_KEY }
       )
@@ -94,12 +91,10 @@ export function Contact() {
       })
 
       setFormData({ name: "", email: "", phone: "", message: "", company: "" })
-      recaptchaRef.current?.reset()
-      setRecaptchaToken(null)
     } catch (err) {
       console.error(err)
       toast({
-        title: "Failed to send",
+        title: "Failed to send ❌",
         description: "Something went wrong while sending your message. Please try again.",
         variant: "destructive",
       })
@@ -206,7 +201,7 @@ export function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="font-inter"
-                      placeholder="Mobile Number"
+                      placeholder="Phone Number"
                     />
                   </div>
 
@@ -225,22 +220,7 @@ export function Contact() {
                     />
                   </div>
 
-                  {/* reCAPTCHA */}
-                  <div className="flex justify-center">
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey={RECAPTCHA_SITE_KEY}
-                      onChange={(token) => setRecaptchaToken(token)}
-                      onExpired={() => setRecaptchaToken(null)}
-                      onErrored={() => setRecaptchaToken(null)}
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting || !recaptchaToken}
-                    className="w-full font-inter font-medium"
-                  >
+                  <Button type="submit" disabled={isSubmitting} className="w-full font-inter font-medium">
                     {isSubmitting ? (
                       <>
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
@@ -280,9 +260,9 @@ export function Contact() {
                 <Button
                   variant="outline"
                   className="w-full font-inter bg-transparent"
-                  onClick={() => window.open("mailto:akshaymandaviya1409@gmail.com", "_blank")}
+                  onClick={() => window.open("mailto:akshaygajjar286@gmail.com", "_blank")}
                 >
-                  akshaymandaviya1409@gmail.com
+                  akshaygajjar286@gmail.com
                 </Button>
               </CardContent>
             </Card>
