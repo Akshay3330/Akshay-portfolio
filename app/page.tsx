@@ -5,9 +5,11 @@ import { Hero } from "@/components/hero"
 import { Projects } from "@/components/projects"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
+
 import { About } from "@/components/about"
 import { OpenSource } from "@/components/open-source"
 import { Contact } from "@/components/contact"
+import { Edu } from "@/components/edu"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -29,6 +31,7 @@ export default function Home() {
         <Services />
         <Process />
         <About />
+        <Edu />
         {/* <OpenSource /> */}
         <Contact />
       </main>

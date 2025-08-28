@@ -8,7 +8,7 @@ export function Hero() {
   const techStack = [
     { name: "React", color: "bg-blue-500" },
     { name: "Vite", color: "bg-purple-500" },
-    { name: "TypeScript", color: "bg-blue-600" },
+    { name: "Wordpress", color: "bg-blue-600" },
     { name: "Tailwind", color: "bg-cyan-500" },
   ]
 

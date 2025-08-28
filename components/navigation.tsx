@@ -45,15 +45,18 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-19">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className=""
-            style={{width:'5%'}}
-          >
-                      <img src="logo1.svg" alt="" />
+      <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  style={{ width: "10%" }}
+>
+  {theme === "dark" ? (
+    <img src="logo-white.png" alt="Logo" className="h-15 w-auto" />
+  ) : (
+    <img src="logo-black.png" alt="Logo" className="h-15 w-auto" />
+  )}
+</motion.div>
 
-          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

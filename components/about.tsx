@@ -1,46 +1,44 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Heart, Target, Lightbulb } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Heart, Target, Lightbulb } from "lucide-react";
 
 export function About() {
   const values = [
     {
       icon: Heart,
       title: "Passion-Driven",
-      description: "I love what I do and it shows in every line of code I write.",
+      description:
+        "I love what I do and it shows in every line of code I write.",
     },
     {
       icon: Target,
       title: "Results-Focused",
-      description: "Every project is an opportunity to deliver measurable business value.",
+      description:
+        "Every project is an opportunity to deliver measurable business value.",
     },
     {
       icon: Lightbulb,
       title: "Innovation-Minded",
-      description: "Always exploring new technologies and approaches to solve problems.",
+      description:
+        "Always exploring new technologies and approaches to solve problems.",
     },
-  ]
+  ];
 
   const skills = [
     "React",
-    "TypeScript",
-    "Next.js",
+    "JavaScript (ES6+), HTML5, CSS3",
     "Vite",
     "Tailwind CSS",
-    "Node.js",
-    "Express",
-    "PostgreSQL",
-    "MongoDB",
-    "GraphQL",
-    "AWS",
-    "Docker",
+    "Tailwind Canva Quick UI Mockups",
+    "Team collaboration and communication",
     "Git",
-    "Jest",
-    "Cypress",
-  ]
+    "Wordpress",
+
+    ,
+  ];
 
   return (
     <section id="about" className="py-24">
@@ -52,9 +50,12 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-sora font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">About Me</h2>
+          <h2 className="font-sora font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
+            About Me
+          </h2>
           <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get to know the person behind the code and the values that drive my work.
+            Get to know the person behind the code and the values that drive my
+            work.
           </p>
         </motion.div>
 
@@ -69,7 +70,11 @@ export function About() {
           >
             <div className="relative">
               <div className="w-64 h-64 mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-purple-500/20">
-                <img src="/Akshay.jpg" alt="Mandaviya Akshay" className="w-full h-full object-cover" />
+                <img
+                  src="/Akshay.jpg"
+                  alt="Mandaviya Akshay"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-primary rounded-full flex items-center justify-center">
                 <span className="text-2xl">👋</span>
@@ -78,13 +83,15 @@ export function About() {
 
             <div className="space-y-4 font-inter text-muted-foreground leading-relaxed">
               <p>
-                Hi! I'm Akshay Mandaviya, a passionate full-stack developer with over 3 years of experience building modern web
-                applications. I specialize in React ecosystem and love creating user experiences that are both beautiful
-                and functional.
+                Hi! I'm Akshay, a passionate full-stack developer with over 3
+                years of experience building modern web applications. I
+                specialize in React ecosystem and love creating user experiences
+                that are both beautiful and functional.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or
-                sharing my knowledge through technical writing and community involvement.
+                When I'm not coding, you'll find me exploring new technologies,
+                contributing to open-source projects, or sharing my knowledge
+                through technical writing and community involvement.
               </p>
             </div>
           </motion.div>
@@ -99,7 +106,9 @@ export function About() {
           >
             {/* Values */}
             <div>
-              <h3 className="font-sora font-bold text-2xl text-foreground mb-6">My Values</h3>
+              <h3 className="font-sora font-bold text-2xl text-foreground mb-6">
+                My Values
+              </h3>
               <div className="space-y-4">
                 {values.map((value, index) => (
                   <motion.div
@@ -116,8 +125,12 @@ export function About() {
                             <value.icon className="h-5 w-5 text-primary" />
                           </div>
                           <div>
-                            <h4 className="font-sora font-semibold text-card-foreground mb-2">{value.title}</h4>
-                            <p className="font-inter text-sm text-muted-foreground">{value.description}</p>
+                            <h4 className="font-sora font-semibold text-card-foreground mb-2">
+                              {value.title}
+                            </h4>
+                            <p className="font-inter text-sm text-muted-foreground">
+                              {value.description}
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -129,7 +142,9 @@ export function About() {
 
             {/* Skills */}
             <div>
-              <h3 className="font-sora font-bold text-2xl text-foreground mb-6">Technical Skills</h3>
+              <h3 className="font-sora font-bold text-2xl text-foreground mb-6">
+                Technical Skills
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
                   <motion.div
@@ -153,5 +168,5 @@ export function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
